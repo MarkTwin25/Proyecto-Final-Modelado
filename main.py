@@ -68,12 +68,13 @@ def descifrar(fragmentos, cifrado):
                 x_valores.append(x)
                 y_valores.append(y)
             except ValueError:
-                raise ValueError("Datos de fragmentos inválidos.")
+                print('Error en el formato de los fragmentos.')
+                sys.exit(1)
     # Generar la clave de cifrado
     clave=int(polinomio_interpolacion(x_valores, y_valores, 0))
-    print(clave)
     if clave<=0:
-        raise ValueError("No se pudo recuperar la clave.")
+        print('Error en la recuperación de la clave.')
+        sys.exit(1)
     clave_bytes_descifrado = clave.to_bytes(32, byteorder='big', signed=False)
     key_generada_descifrado = hashlib.sha256(clave_bytes_descifrado).digest()
     # Leer el archivo cifrado
@@ -87,7 +88,8 @@ def descifrar(fragmentos, cifrado):
     try:
         plaintext = unpad(cipher.decrypt(ciphertext), AES.block_size)
     except ValueError:
-        raise ValueError("Error en el padding. Clave o IV incorrectos.")
+        print('Error en descifrado')
+        sys.exit(1)
     # Guardar el archivo descifrado con el nombre original
     with open(filename, 'wb') as f:
         f.write(plaintext)
