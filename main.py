@@ -102,6 +102,13 @@ if __name__ == '__main__':
         if len(sys.argv) != 6:
             print('Uso: python3 main.py c fragmentos n t claro')
             sys.exit(1)
+        n=int(sys.argv[3])
+        t=int(sys.argv[4])
+        if n<=2 or t<=1 or n<=t:
+            print('n debe ser mayor que t')
+            print('n debe ser mayor que 2')
+            print('t debe ser mayor que 1')
+            sys.exit(1)
         cifrar(int(sys.argv[3]), int(sys.argv[4]), sys.argv[5], sys.argv[5] + '.aes', sys.argv[2])
     elif sys.argv[1] == '-d':
         if len(sys.argv) != 4:
