@@ -7,7 +7,7 @@ Rosas Marín Jesús Martín
 Memik Hernández Toprak
 
 Godinez Hernandez Axel Alejandro
-
+---
 Este proyecto se basa en el esquema de Secreto compartido de Shamir
 
 Es necesario instalar las siguientes bibliotecas para la ejecuion del programa
