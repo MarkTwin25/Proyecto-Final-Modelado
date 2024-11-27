@@ -1,9 +1,11 @@
 # Proyecto-Final-Modelado
 
-Integrantes 
+## Integrantes 
 
 Rosas Marín Jesús Martín 
-Memik Hernández Toprak 
+
+Memik Hernández Toprak
+
 Godinez Hernandez Axel Alejandro
 
 Este proyecto se basa en el esquema de Secreto compartido de Shamir
